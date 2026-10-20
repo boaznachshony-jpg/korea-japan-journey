@@ -1,0 +1,175 @@
+<meta charset="utf-8">
+<meta name="claude:viewport-fit-sides" content="cover">
+<title>מגילת המסע — קוריאה ויפן</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --wood1:#5a3a1c; --wood2:#8a5a2b; --wood3:#3a2410; --gold:#c9a227; --gold2:#e8cf7a;
+  --park:#efe3c6; --park2:#e4d4ad; --ink:#211708; --ink2:#50391a; --accent:#7a2010;
+  --disp:"Frank Ruhl Libre",Georgia,serif; --body:"Heebo",Arial,sans-serif;
+  color-scheme:dark; direction:rtl;
+}
+*{box-sizing:border-box}
+html,body{margin:0;height:100%}
+body{overflow:hidden;background:
+   radial-gradient(120% 90% at 50% -10%, #3a1f24 0%, #231016 40%, #140a0d 100%) fixed,#140a0d;
+   font-family:var(--body);color:var(--ink)}
+/* ark valance / parochet */
+.valance{position:fixed;top:0;left:0;right:0;height:46px;z-index:40;pointer-events:none;
+  background:linear-gradient(#4a1420,#3a0f18);
+  box-shadow:0 6px 18px rgba(0,0,0,.5);}
+.valance::after{content:"";position:absolute;top:46px;left:0;right:0;height:26px;
+  background:
+   radial-gradient(14px 26px at 14px 0,#4a1420 98%,transparent) repeat-x;
+  background-size:34px 26px;
+  filter:drop-shadow(0 4px 4px rgba(0,0,0,.4));}
+.valance .fr{position:absolute;top:0;left:0;right:0;height:46px;
+  background:repeating-linear-gradient(90deg,transparent 0 22px,rgba(201,162,39,.5) 22px 24px);opacity:.5}
+
+.wrap{position:fixed;inset:0;display:flex;align-items:center}
+.scroller{position:absolute;inset:60px 72px 64px;overflow-x:auto;overflow-y:hidden;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch;cursor:grab}
+.scroller::-webkit-scrollbar{display:none}
+.scroller.drag{cursor:grabbing}
+.track{display:flex;flex-direction:row;direction:rtl;height:100%;align-items:stretch;width:max-content;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.10),transparent 3%,transparent 97%,rgba(0,0,0,.10)),
+    linear-gradient(180deg,#f4e9cf,#e9dab4 55%,#e0cfa4);
+  box-shadow:inset 0 0 120px rgba(120,86,40,.25), 0 20px 60px rgba(0,0,0,.5);
+  border-top:1px solid rgba(120,86,40,.3);border-bottom:1px solid rgba(120,86,40,.3);}
+.track::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix type='matrix' values='0 0 0 0 0.45 0 0 0 0 0.34 0 0 0 0 0.16 0 0 0 0.05 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");}
+
+.col{position:relative;flex:0 0 auto;height:100%;display:flex;flex-direction:column;justify-content:center;
+  padding:5vh clamp(26px,3.4vw,54px);min-width:0}
+.col.chap{width:max-content;max-width:none;align-items:flex-start}
+.col.open,.col.close{width:clamp(360px,44vw,560px);text-align:center;align-items:center}
+
+.crown{font-size:30px;color:var(--gold);margin-bottom:.6rem;text-shadow:0 1px 0 #fff6}
+.open .kick{letter-spacing:.3em;font-size:12px;color:var(--accent);font-weight:500;margin-bottom:.8rem}
+.open h1{font-family:var(--disp);font-weight:900;font-size:clamp(2.2rem,5vw,3.8rem);line-height:1.02;margin:0;color:var(--ink)}
+.open .sub{font-family:var(--disp);font-weight:500;margin-top:.8rem;color:var(--ink2);font-size:clamp(.95rem,1.8vw,1.2rem)}
+.open .names{margin-top:1rem;color:var(--accent);font-weight:500;font-size:clamp(.85rem,1.6vw,1.05rem);letter-spacing:.02em}
+.scrollcue{margin-top:1.8rem;color:var(--ink2);font-size:12px;letter-spacing:.14em}
+
+.chhead{text-align:right;margin-bottom:1rem}
+.chno{font-family:var(--disp);font-weight:700;color:var(--accent);font-size:clamp(1rem,2vw,1.3rem)}
+.chhead h2{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,4.4vw,3.2rem);margin:.1rem 0 0;color:var(--ink);line-height:1}
+.chhead .en{letter-spacing:.34em;color:var(--ink2);font-size:11px;margin-top:.3rem}
+.chhead .dates{color:var(--accent);font-size:clamp(.82rem,1.5vw,.98rem);margin-top:.35rem}
+.narr{font-family:var(--disp);font-weight:700;font-size:clamp(1.02rem,1.95vw,1.3rem);line-height:1.7;color:var(--ink);
+  max-width:40ch;margin:0 0 1.3rem;border-top:2px solid var(--gold);border-image:linear-gradient(90deg,var(--gold),transparent) 1;padding-top:1rem}
+
+.prints{display:flex;flex-direction:row;gap:clamp(14px,2vw,30px);align-items:center;flex-wrap:nowrap}
+.mount{flex:0 0 auto;margin:0;background:#fffdf7;padding:9px 9px 32px;border-radius:2px;transform:rotate(var(--r,0));
+  box-shadow:0 10px 26px rgba(60,40,16,.35),0 1px 0 rgba(255,255,255,.6) inset;transition:transform .35s, box-shadow .35s}
+.mount:hover{transform:rotate(0) scale(1.03);box-shadow:0 18px 40px rgba(60,40,16,.45)}
+.mount img{display:block;height:clamp(220px,46vh,400px);width:auto;max-width:520px;object-fit:cover;border-radius:1px}
+.mount figcaption{text-align:center;font-family:var(--disp);color:var(--ink2);font-size:13px;margin-top:9px}
+
+.divider{flex:0 0 auto;align-self:center;height:66%;width:clamp(40px,5vw,90px);display:flex;align-items:center;justify-content:center}
+.divider span{width:2px;height:100%;background:linear-gradient(transparent,rgba(138,45,26,.5),transparent);position:relative}
+.divider span::before{content:"❧";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);color:var(--accent);font-size:20px;background:#ecdfbf;padding:4px}
+
+.close h2{font-family:var(--disp);font-weight:900;font-size:clamp(1.8rem,3.6vw,2.8rem);margin:.2rem 0 1rem;color:var(--ink)}
+.close p{font-family:var(--disp);color:var(--ink2);max-width:34ch;margin:0 auto;line-height:1.7;font-size:clamp(.95rem,1.7vw,1.12rem)}
+.close .ded{margin-top:1.2rem;color:var(--accent);font-weight:500;font-family:var(--disp);font-size:clamp(.95rem,1.7vw,1.15rem)}
+.mm{display:inline-flex;align-items:center;gap:.4rem;margin-top:1.4rem;padding:.6rem 1.3rem;border:1px solid var(--accent);
+  border-radius:999px;color:var(--accent);text-decoration:none;font-weight:500;font-family:var(--body);font-size:.95rem;transition:.25s}
+.mm:hover{background:var(--accent);color:#f4e9cf}
+.close .chazak{margin-top:1.4rem;letter-spacing:.2em;color:var(--gold);font-family:var(--disp);font-weight:700;font-size:clamp(.9rem,1.6vw,1.1rem)}
+
+/* rollers (atzei chaim) */
+.roller{position:fixed;top:0;bottom:0;width:72px;z-index:30;display:flex;flex-direction:column;align-items:center;justify-content:center;pointer-events:none}
+.roller.r{right:0} .roller.l{left:0}
+.pole{position:absolute;top:30px;bottom:30px;width:30px;border-radius:15px;
+  background:
+    linear-gradient(90deg,#2c1a0a,#7a4e24 22%,#b07a3c 42%,#6e461f 62%,#2c1a0a),
+    repeating-linear-gradient(0deg,rgba(0,0,0,.14) 0 3px,transparent 3px 7px);
+  box-shadow:0 0 22px rgba(0,0,0,.6),inset 0 0 8px rgba(0,0,0,.4)}
+.knob{position:absolute;width:52px;height:30px;border-radius:14px;left:50%;transform:translateX(-50%);
+  background:radial-gradient(circle at 40% 35%,var(--gold2),var(--gold) 55%,#8a6b12);
+  box-shadow:0 3px 8px rgba(0,0,0,.5)}
+.knob.t{top:6px} .knob.b{bottom:6px}
+/* parchment curl at the inner edge of each roller */
+.curl{position:fixed;top:60px;bottom:64px;width:40px;z-index:25;pointer-events:none}
+.curl.r{right:56px;background:linear-gradient(270deg,rgba(90,60,25,.55),rgba(90,60,25,.12) 60%,transparent)}
+.curl.l{left:56px;background:linear-gradient(90deg,rgba(90,60,25,.55),rgba(90,60,25,.12) 60%,transparent)}
+
+.bar{position:fixed;left:0;right:0;bottom:0;z-index:50;display:flex;align-items:center;justify-content:center;gap:.4rem;
+  padding:10px 76px calc(10px + env(safe-area-inset-bottom));}
+.bar .chips{display:flex;gap:.3rem;overflow-x:auto;scrollbar-width:none;max-width:86vw}
+.bar .chips::-webkit-scrollbar{display:none}
+.bar button{flex:0 0 auto;background:rgba(236,223,191,.9);border:1px solid rgba(138,45,26,.35);color:var(--ink);
+  font-family:var(--body);font-size:12.5px;padding:.3rem .7rem;border-radius:999px;cursor:pointer;white-space:nowrap;transition:.2s}
+.bar button:hover,.bar button.on{background:var(--accent);color:#f4e9cf;border-color:var(--accent)}
+.hint{position:fixed;bottom:54px;left:0;right:0;text-align:center;color:var(--gold2);font-size:12px;letter-spacing:.14em;z-index:45;pointer-events:none;transition:opacity .6s}
+@media(max-width:640px){ .scroller{inset:54px 58px 60px} .roller{width:58px} .curl.r{right:44px} .curl.l{left:44px} .bar{padding-inline:60px} }
+</style>
+
+<div class="valance"><div class="fr"></div></div>
+<div class="wrap">
+  <div class="scroller" id="sc">
+    <div class="track" id="track">
+<section class="col open"><div class="crown">✡</div><div class="kick">יומן מסע · 2026</div><h1>דְּרוֹם קוֹרֵיאָה<br>וְיַפָּן</h1><div class="sub">מסע של פעם בחיים · 23 ימים · מתל אביב לתל אביב</div><div class="names">בּוֹעַז · אִירִיס · לִילִיאַן · עָמִית · פָּזִית</div><div class="scrollcue">⟵ גוללו לפתוח את המגילה</div></section>
+<div class="divider"><span></span></div>
+<section class="col chap" id="ch-א"><div class="chhead"><div class="chno">פרק א</div><h2>היציאה לדרך</h2><div class="en">DEPARTURE</div><div class="dates">12–13 בספטמבר</div></div><p class="narr">כל מסע גדול מתחיל בצעד אחד — ובמקרה שלנו, בטיסה ארוכה אל המזרח הרחוק. מתל אביב, דרך דובאי, ואל ההרפתקה שחיכתה בקוריאה.</p><div class="prints"><figure class="mount" style="--r:-2.2deg"><img loading="lazy" decoding="async" src="web/00000.jpg" alt=""></figure><figure class="mount" style="--r:1.6deg"><img loading="lazy" decoding="async" src="web/00009.jpg" alt=""></figure><figure class="mount" style="--r:-1.2deg"><img loading="lazy" decoding="async" src="web/00011.jpg" alt=""></figure><figure class="mount" style="--r:2.0deg"><img loading="lazy" decoding="async" src="web/00049.jpg" alt=""></figure></div></section>
+<div class="divider"><span></span></div>
+<section class="col chap" id="ch-ב"><div class="chhead"><div class="chno">פרק ב</div><h2>סיאול</h2><div class="en">SEOUL</div><div class="dates">13–17 בספטמבר</div></div><p class="narr">סיאול קיבלה את פנינו בשילוב מרתק בין היסטוריה מלכותית, אדריכלות עתידנית וקולינריה משובחת — ארמונות, מגדל N, וספריית Starfield.</p><div class="prints"><figure class="mount" style="--r:-2.2deg"><img loading="lazy" decoding="async" src="web/00105.jpg" alt=""><figcaption>ארמון גיונגבוקגונג</figcaption></figure><figure class="mount" style="--r:1.6deg"><img loading="lazy" decoding="async" src="web/00118.jpg" alt=""></figure><figure class="mount" style="--r:-1.2deg"><img loading="lazy" decoding="async" src="web/00196.jpg" alt=""></figure><figure class="mount" style="--r:2.0deg"><img loading="lazy" decoding="async" src="web/00168.jpg" alt=""><figcaption>מגדל N בלילה</figcaption></figure><figure class="mount" style="--r:-1.8deg"><img loading="lazy" decoding="async" src="web/00259.jpg" alt=""></figure></div></section>
+<div class="divider"><span></span></div>
+<section class="col chap" id="ch-ג"><div class="chhead"><div class="chno">פרק ג</div><h2>אי ג׳ג׳ו</h2><div class="en">JEJU</div><div class="dates">17–20 בספטמבר</div></div><p class="narr">הנחיתה באי הגעשי ג׳ג׳ו הביאה עימה אווירת נופש פראית ומשחררת — מפלים, עמודי בזלת ומטעי תה ירוק מול האוקיינוס.</p><div class="prints"><figure class="mount" style="--r:-2.2deg"><img loading="lazy" decoding="async" src="web/00664.jpg" alt=""></figure><figure class="mount" style="--r:1.6deg"><img loading="lazy" decoding="async" src="web/00458.jpg" alt=""><figcaption>מפל צ׳אונג׳ייאון</figcaption></figure><figure class="mount" style="--r:-1.2deg"><img loading="lazy" decoding="async" src="web/00674.jpg" alt=""></figure><figure class="mount" style="--r:2.0deg"><img loading="lazy" decoding="async" src="web/00740.jpg" alt=""></figure></div></section>
+<div class="divider"><span></span></div>
+<section class="col chap" id="ch-ד"><div class="chhead"><div class="chno">פרק ד</div><h2>בוסאן וגיונג׳ו</h2><div class="en">BUSAN</div><div class="dates">20–23 בספטמבר</div></div><p class="narr">עיר הנמל בוסאן שילבה גורדי שחקים, כפרים צבעוניים על המדרון וסיור לילה היסטורי בעיר העתיקה גיונג׳ו.</p><div class="prints"><figure class="mount" style="--r:-2.2deg"><img loading="lazy" decoding="async" src="web/00775.jpg" alt=""></figure><figure class="mount" style="--r:1.6deg"><img loading="lazy" decoding="async" src="web/00963.jpg" alt=""></figure><figure class="mount" style="--r:-1.2deg"><img loading="lazy" decoding="async" src="web/01064.jpg" alt=""></figure><figure class="mount" style="--r:2.0deg"><img loading="lazy" decoding="async" src="web/01114.jpg" alt=""></figure></div></section>
+<div class="divider"><span></span></div>
+<section class="col chap" id="ch-ה"><div class="chhead"><div class="chno">פרק ה</div><h2>קיוטו</h2><div class="en">KYOTO</div><div class="dates">23–25 בספטמבר</div></div><p class="narr">הבירה הקיסרית לשעבר קיבלה אותנו באווירת זן — חורשות במבוק, מקדשים שמורים וסמטאות גיאשה.</p><div class="prints"><figure class="mount" style="--r:-2.2deg"><img loading="lazy" decoding="async" src="web/01208.jpg" alt=""></figure><figure class="mount" style="--r:1.6deg"><img loading="lazy" decoding="async" src="web/01285.jpg" alt=""><figcaption>פסלי האבן</figcaption></figure><figure class="mount" style="--r:-1.2deg"><img loading="lazy" decoding="async" src="web/01335.jpg" alt=""><figcaption>סמטאות Gion</figcaption></figure><figure class="mount" style="--r:2.0deg"><img loading="lazy" decoding="async" src="web/01272.jpg" alt=""></figure></div></section>
+<div class="divider"><span></span></div>
+<section class="col chap" id="ch-ו"><div class="chhead"><div class="chno">פרק ו</div><h2>נאושימה</h2><div class="en">NAOSHIMA</div><div class="dates">25–26 בספטמבר</div></div><p class="narr">אי האמנות — מפגש ייחודי בין ארכיטקטורה של טדאו אנדו, הדלועים של יאיוי קוסאמה ונופי הים הפתוח.</p><div class="prints"><figure class="mount" style="--r:-2.2deg"><img loading="lazy" decoding="async" src="web/01484.jpg" alt=""><figcaption>הדלעת הצהובה</figcaption></figure><figure class="mount" style="--r:1.6deg"><img loading="lazy" decoding="async" src="web/01444.jpg" alt=""></figure><figure class="mount" style="--r:-1.2deg"><img loading="lazy" decoding="async" src="web/01490.jpg" alt=""></figure><figure class="mount" style="--r:2.0deg"><img loading="lazy" decoding="async" src="web/01496.jpg" alt=""><figcaption>הדלעת האדומה</figcaption></figure></div></section>
+<div class="divider"><span></span></div>
+<section class="col chap" id="ch-ז"><div class="chhead"><div class="chno">פרק ז</div><h2>שיקוקו</h2><div class="en">SHIKOKU</div><div class="dates">26–30 בספטמבר</div></div><p class="narr">האי הפראי העניק חוויה כפרית ואותנטית — מעיינות חמים, קניונים, טירת קוצ׳י ודוגו אונסן ההיסטורי.</p><div class="prints"><figure class="mount" style="--r:-2.2deg"><img loading="lazy" decoding="async" src="web/01798.jpg" alt=""></figure><figure class="mount" style="--r:1.6deg"><img loading="lazy" decoding="async" src="web/01635.jpg" alt=""></figure><figure class="mount" style="--r:-1.2deg"><img loading="lazy" decoding="async" src="web/01765.jpg" alt=""><figcaption>דוגו בלילה</figcaption></figure><figure class="mount" style="--r:2.0deg"><img loading="lazy" decoding="async" src="web/01873.jpg" alt=""></figure></div></section>
+<div class="divider"><span></span></div>
+<section class="col chap" id="ch-ח"><div class="chhead"><div class="chno">פרק ח</div><h2>טוקיו</h2><div class="en">TOKYO</div><div class="dates">30 בספטמבר – 4 באוקטובר</div></div><p class="narr">פרק הסיום הביא אותנו אל אחת הערים הגדולות בעולם — קצב עירוני, מסורת, מעבר שיבויה ואורות הכרך. ואז, הביתה.</p><div class="prints"><figure class="mount" style="--r:-2.2deg"><img loading="lazy" decoding="async" src="web/01901.jpg" alt=""><figcaption>מעבר שיבויה</figcaption></figure><figure class="mount" style="--r:1.6deg"><img loading="lazy" decoding="async" src="web/01933.jpg" alt=""></figure><figure class="mount" style="--r:-1.2deg"><img loading="lazy" decoding="async" src="web/01944.jpg" alt=""></figure><figure class="mount" style="--r:2.0deg"><img loading="lazy" decoding="async" src="web/02025.jpg" alt=""><figcaption>הדרך הביתה</figcaption></figure></div></section>
+<div class="divider"><span></span></div>
+<section class="col chap" id="ch-ט"><div class="chhead"><div class="chno">פרק ט</div><h2>החבורה</h2><div class="en">THE CREW</div><div class="dates">לאורך כל המסע</div></div><p class="narr">בין כל הנופים, המקדשים והטעמים — אלה הרגעים שבהם היינו כולנו יחד. בועז, איריס, ליליאן, עמית ופזית.</p><div class="prints"><figure class="mount" style="--r:-2.2deg"><img loading="lazy" decoding="async" src="web/gcrew_01.jpg" alt=""><figcaption>סיאול</figcaption></figure><figure class="mount" style="--r:1.6deg"><img loading="lazy" decoding="async" src="web/gcrew_12.jpg" alt=""><figcaption>בוסאן</figcaption></figure><figure class="mount" style="--r:-1.2deg"><img loading="lazy" decoding="async" src="web/gcrew_16.jpg" alt=""><figcaption>וואגיו</figcaption></figure><figure class="mount" style="--r:2.0deg"><img loading="lazy" decoding="async" src="web/gcrew_20.jpg" alt=""><figcaption>שיקוקו</figcaption></figure><figure class="mount" style="--r:-1.8deg"><img loading="lazy" decoding="async" src="web/gcrew_22.jpg" alt=""><figcaption>דוגו</figcaption></figure><figure class="mount" style="--r:1.1deg"><img loading="lazy" decoding="async" src="web/gcrew_24.jpg" alt=""><figcaption>טוקיו</figcaption></figure></div></section>
+<div class="divider"><span></span></div>
+<section class="col close"><div class="crown">✡</div><h2>וְחָזַרְנוּ הַבַּיְתָה</h2><p>מתל אביב לתל אביב, דרך שני עמים ואינספור רגעים, טעמים ונופים — 23 ימים שהפכו לזיכרון אחד גדול.</p><div class="ded">לליליאן · עמית · פזית · איריס · בועז — לחבורה שעשתה חיים.</div><a class="mm" href="https://boaznachshony-jpg.github.io/korea-japan-journey/tripmap.html" target="_blank" rel="noopener">מפת המסע והחשיבה ↗</a><div class="chazak">חֲזַק · חֲזַק · וְנִתְחַזֵּק</div></section>
+    </div>
+  </div>
+</div>
+<div class="roller r"><div class="pole"></div><div class="knob t"></div><div class="knob b"></div></div>
+<div class="roller l"><div class="pole"></div><div class="knob t"></div><div class="knob b"></div></div>
+<div class="curl r"></div><div class="curl l"></div>
+<div class="hint" id="hint">⟵ גוללו, גררו או החליקו לפתוח את המגילה</div>
+<div class="bar"><div class="chips" id="chips"><button data-t="ch-א">היציאה לדרך</button><button data-t="ch-ב">סיאול</button><button data-t="ch-ג">אי ג׳ג׳ו</button><button data-t="ch-ד">בוסאן וגיונג׳ו</button><button data-t="ch-ה">קיוטו</button><button data-t="ch-ו">נאושימה</button><button data-t="ch-ז">שיקוקו</button><button data-t="ch-ח">טוקיו</button><button data-t="ch-ט">החבורה</button></div></div>
+
+<script>
+(function(){
+  var sc=document.getElementById('sc'), hint=document.getElementById('hint');
+  // wheel: vertical wheel -> horizontal scroll
+  sc.addEventListener('wheel',function(e){ if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){ sc.scrollLeft+=e.deltaY; e.preventDefault(); } },{passive:false});
+  // drag to pan
+  var down=false,sx=0,sl=0;
+  sc.addEventListener('pointerdown',function(e){down=true;sx=e.clientX;sl=sc.scrollLeft;sc.classList.add('drag');sc.setPointerCapture(e.pointerId);});
+  sc.addEventListener('pointermove',function(e){ if(down){ sc.scrollLeft=sl-(e.clientX-sx); } });
+  function up(){down=false;sc.classList.remove('drag');}
+  sc.addEventListener('pointerup',up); sc.addEventListener('pointercancel',up);
+  sc.addEventListener('scroll',function(){ if(hint){hint.style.opacity=0;} mark(); },{passive:true});
+  // chapter chips
+  var chips=[].slice.call(document.querySelectorAll('#chips button'));
+  chips.forEach(function(b){ b.onclick=function(){ var t=document.getElementById(b.dataset.t); if(t) t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'}); }; });
+  function mark(){
+    var mid=sc.scrollLeft; var best=null,bd=1e9;
+    chips.forEach(function(b){ var t=document.getElementById(b.dataset.t); if(!t)return;
+      var d=Math.abs(t.offsetLeft - (sc.scrollLeft + sc.clientWidth/2) + t.offsetWidth/2);
+      // fallback distance using bounding rect
+      var r=t.getBoundingClientRect(); var dd=Math.abs(r.left+r.width/2 - window.innerWidth/2);
+      if(dd<bd){bd=dd;best=b;} });
+    chips.forEach(function(b){ b.classList.toggle('on', b===best); });
+    if(best) best.scrollIntoView({inline:'center',block:'nearest'});
+  }
+  document.addEventListener('keydown',function(e){ if(e.key==='ArrowLeft') sc.scrollLeft+=400; else if(e.key==='ArrowRight') sc.scrollLeft-=400; });
+  setTimeout(function(){ if(hint) hint.style.opacity=0; }, 6500);
+  mark();
+})();
+</script>
