@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Design System — יומן מסע קוריאה ויפן</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@500;700;900&family=Heebo:wght@300;400;500;700&display=swap">
+<style>
+:root{
+  --bg:#0d0c0f; --panel:#15131a; --panel2:#1b1922; --fg:#f3ede4; --muted:#a49d95; --faint:#6f6a73;
+  --accent:#e8863a; --accent2:#f2b14e; --line:rgba(255,255,255,.12);
+  --park:#efe3c6; --park2:#e4d4ad; --ink:#211708; --red:#7a2010; --gold:#c9a227; --gold2:#e8cf7a; --wood:#8a5a2b;
+  --disp:"Frank Ruhl Libre",Georgia,serif; --body:"Heebo","Segoe UI",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:radial-gradient(120% 70% at 50% 0%,#1a1620,#0d0c0f 60%) fixed,#0d0c0f;color:var(--fg);font-family:var(--body);font-weight:300;-webkit-font-smoothing:antialiased;line-height:1.6}
+.wrap{max-width:1040px;margin:0 auto;padding:clamp(20px,5vw,56px) clamp(16px,4vw,40px)}
+header.hd{text-align:center;padding:clamp(24px,6vw,60px) 0 clamp(8px,2vw,16px)}
+.kick{letter-spacing:.34em;font-size:12px;color:var(--accent2);font-weight:500}
+h1{font-family:var(--disp);font-weight:900;font-size:clamp(2.2rem,6vw,3.6rem);margin:.5rem 0 .4rem;letter-spacing:-.01em}
+.lede{color:var(--muted);max-width:60ch;margin:.4rem auto 0;font-size:clamp(.95rem,2.2vw,1.12rem)}
+.sect{margin-top:clamp(2.4rem,6vw,4rem)}
+.sect-h{display:flex;align-items:baseline;gap:.8rem;margin-bottom:1.3rem}
+.sect-h h2{font-family:var(--disp);font-weight:900;font-size:clamp(1.4rem,4vw,2rem);margin:0}
+.sect-h .en{color:var(--faint);letter-spacing:.3em;font-size:12px;font-weight:400}
+.sect-h .ln{flex:1;height:1px;background:linear-gradient(90deg,var(--accent),transparent)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:clamp(16px,3vw,26px);box-shadow:0 18px 44px rgba(0,0,0,.4)}
+.grid{display:grid;gap:14px}
+.note{color:var(--faint);font-size:12.5px;margin-top:.5rem;letter-spacing:.04em}
+code{background:rgba(255,255,255,.07);color:var(--accent2);padding:.08em .4em;border-radius:5px;font-size:.86em;direction:ltr;display:inline-block}
+
+/* palette */
+.sw-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
+.sw{border-radius:12px;overflow:hidden;border:1px solid var(--line);background:var(--panel2)}
+.sw .chip{height:76px}
+.sw .meta{padding:.6rem .7rem}
+.sw .nm{font-weight:500;font-size:13.5px}
+.sw .hex{color:var(--muted);font-size:12px;direction:ltr;letter-spacing:.04em}
+.theme-tag{display:inline-block;font-size:11px;letter-spacing:.2em;color:var(--accent2);margin:1.2rem 0 .7rem;font-weight:500}
+
+/* type */
+.type-row{display:flex;align-items:baseline;gap:1rem;flex-wrap:wrap;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.type-row:last-child{border-bottom:0}
+.type-row .lbl{color:var(--faint);font-size:12px;min-width:150px;direction:ltr}
+.disp-xl{font-family:var(--disp);font-weight:900;font-size:clamp(2rem,6vw,3rem);line-height:1}
+.disp-l{font-family:var(--disp);font-weight:700;font-size:1.6rem}
+.disp-m{font-family:var(--disp);font-weight:500;font-size:1.2rem}
+.body-m{font-family:var(--body);font-weight:300;font-size:1.05rem}
+.body-s{font-family:var(--body);font-weight:500;font-size:.85rem;letter-spacing:.14em}
+
+/* components */
+.comp-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));align-items:start}
+.comp{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:12px}
+.comp .tt{font-family:var(--disp);font-weight:700;font-size:1.05rem}
+.comp .stage{background:radial-gradient(120% 90% at 50% 30%,#1b1922,#100e14);border-radius:10px;padding:18px;display:flex;align-items:center;justify-content:center;min-height:120px;flex-wrap:wrap;gap:10px}
+.comp .stage.park{background:linear-gradient(180deg,var(--park),var(--park2))}
+
+.pill{font-family:var(--disp);font-weight:700;color:#160f06;padding:.4rem .9rem;border-radius:13px;font-size:.95rem}
+.c0{background:#e8863a}.c1{background:#f2b14e}.c2{background:#d59a63}.c3{background:#c9a24b}.c4{background:#9db86a}.c5{background:#5fb3a2}.c6{background:#6f9bd0}.c7{background:#b081c8}.c8{background:#d1748f}
+
+.mount{background:#fffdf7;padding:8px 8px 26px;border-radius:2px;transform:rotate(-2deg);box-shadow:0 10px 26px rgba(0,0,0,.5);position:relative}
+.mount img{display:block;width:150px;height:110px;object-fit:cover;border-radius:1px}
+.mount .cap{position:absolute;inset-inline:8px;bottom:6px;text-align:center;font-family:var(--disp);color:#50391a;font-size:12px}
+
+.pin{position:relative;width:34px;height:34px}
+.pin .dot{position:absolute;inset:0;border-radius:50%;background:var(--accent2);border:3px solid #0d0c0f;display:flex;align-items:center;justify-content:center;color:#0d0c0f;font-weight:700;font-size:14px}
+.pin .ring{position:absolute;inset:-7px;border-radius:50%;border:1.5px solid var(--accent2);opacity:.4;animation:pulse 3s ease-out infinite}
+@keyframes pulse{0%{transform:scale(.7);opacity:.5}70%,100%{transform:scale(1.4);opacity:0}}
+.route{display:flex;align-items:center;gap:0}
+.route .seg{width:40px;height:3px;background:var(--accent)}
+.route .segd{width:40px;height:0;border-top:2px dashed var(--accent2);opacity:.7}
+
+.rootbox{background:#231b10;border:2px solid var(--accent2);border-radius:14px;color:var(--accent2);font-family:var(--disp);font-weight:900;padding:.5rem 1rem;font-size:1rem}
+.leaf{display:flex;align-items:center;gap:.5rem;color:#e7ddcf;font-size:.9rem}
+.leaf .d{width:8px;height:8px;border-radius:50%;background:var(--accent)}
+
+.btn-nav{width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.04);color:var(--fg);font-size:20px;display:flex;align-items:center;justify-content:center}
+.chip{background:transparent;border:1px solid var(--line);color:var(--muted);font-size:12.5px;padding:.3rem .7rem;border-radius:999px}
+.chip.on{background:var(--accent2);color:#0d0c0f;border-color:var(--accent2);font-weight:500}
+.mm-btn{display:inline-flex;align-items:center;gap:.4rem;padding:.55rem 1.2rem;border:1px solid var(--accent);border-radius:999px;color:var(--accent2);font-weight:500;font-size:.9rem}
+
+/* parchment + wood */
+.scroll-demo{position:relative;height:150px;border-radius:12px;overflow:hidden;background:linear-gradient(180deg,var(--park),var(--park2))}
+.scroll-demo .pole{position:absolute;top:10px;bottom:10px;width:22px;border-radius:11px;background:linear-gradient(90deg,#2c1a0a,#b07a3c 45%,#6e461f 65%,#2c1a0a);box-shadow:0 0 16px rgba(0,0,0,.5)}
+.scroll-demo .pole.r{right:12px}.scroll-demo .pole.l{left:12px}
+.scroll-demo .knob{position:absolute;width:40px;height:20px;border-radius:10px;background:radial-gradient(circle at 40% 35%,var(--gold2),var(--gold) 55%,#8a6b12)}
+.scroll-demo .valance{position:absolute;top:0;left:0;right:0;height:22px;background:#4a1420}
+.scroll-demo .valance::after{content:"";position:absolute;top:22px;left:0;right:0;height:14px;background:radial-gradient(9px 14px at 9px 0,#4a1420 98%,transparent) repeat-x;background-size:20px 14px}
+.orn{color:var(--red);font-size:22px}.crown{color:var(--gold);font-size:22px}
+.foot{text-align:center;color:var(--faint);font-size:12px;letter-spacing:.3em;padding:3rem 0 2rem}
+.foot a{color:var(--accent2)}
+</style>
+
+<header class="hd">
+  <div class="wrap">
+    <div class="kick">DESIGN SYSTEM · 2026</div>
+    <h1>יומן מסע · קוריאה ויפן</h1>
+    <p class="lede">שפת העיצוב של האלבום — הפלטה, הטיפוגרפיה והרכיבים המשותפים לשלושת הפורמטים: הספר המדפדף, מגילת הקלף, ומפת המסע.</p>
+  </div>
+</header>
+
+<div class="wrap">
+
+<section class="sect">
+  <div class="sect-h"><h2>פלטת צבעים</h2><span class="en">PALETTE</span><span class="ln"></span></div>
+  <div class="theme-tag">ערכת הספר · קולנועי כהה</div>
+  <div class="grid sw-grid">
+    <div class="sw"><div class="chip" style="background:#0d0c0f"></div><div class="meta"><div class="nm">רקע</div><div class="hex">#0D0C0F</div></div></div>
+    <div class="sw"><div class="chip" style="background:#15131a"></div><div class="meta"><div class="nm">פאנל</div><div class="hex">#15131A</div></div></div>
+    <div class="sw"><div class="chip" style="background:#f3ede4"></div><div class="meta"><div class="nm">טקסט</div><div class="hex">#F3EDE4</div></div></div>
+    <div class="sw"><div class="chip" style="background:#a49d95"></div><div class="meta"><div class="nm">משני</div><div class="hex">#A49D95</div></div></div>
+    <div class="sw"><div class="chip" style="background:#e8863a"></div><div class="meta"><div class="nm">הדגשה</div><div class="hex">#E8863A</div></div></div>
+    <div class="sw"><div class="chip" style="background:#f2b14e"></div><div class="meta"><div class="nm">הדגשה 2</div><div class="hex">#F2B14E</div></div></div>
+  </div>
+  <div class="theme-tag">ערכת המגילה · קלף וזהב</div>
+  <div class="grid sw-grid">
+    <div class="sw"><div class="chip" style="background:#efe3c6"></div><div class="meta"><div class="nm">קלף</div><div class="hex">#EFE3C6</div></div></div>
+    <div class="sw"><div class="chip" style="background:#211708"></div><div class="meta"><div class="nm">דיו</div><div class="hex">#211708</div></div></div>
+    <div class="sw"><div class="chip" style="background:#7a2010"></div><div class="meta"><div class="nm">אדום פרוכת</div><div class="hex">#7A2010</div></div></div>
+    <div class="sw"><div class="chip" style="background:#c9a227"></div><div class="meta"><div class="nm">זהב</div><div class="hex">#C9A227</div></div></div>
+    <div class="sw"><div class="chip" style="background:#8a5a2b"></div><div class="meta"><div class="nm">עץ</div><div class="hex">#8A5A2B</div></div></div>
+  </div>
+</section>
+
+<section class="sect">
+  <div class="sect-h"><h2>טיפוגרפיה</h2><span class="en">TYPE</span><span class="ln"></span></div>
+  <div class="card">
+    <div class="type-row"><span class="lbl">Frank Ruhl Libre · 900</span><span class="disp-xl">דרום קוריאה ויפן</span></div>
+    <div class="type-row"><span class="lbl">Frank Ruhl Libre · 700</span><span class="disp-l">כותרת פרק · סיאול</span></div>
+    <div class="type-row"><span class="lbl">Frank Ruhl Libre · 500</span><span class="disp-m">פסקת פתיחה נרטיבית למקטע</span></div>
+    <div class="type-row"><span class="lbl">Heebo · 300</span><span class="body-m">גוף טקסט — תיאור יומי של המסלול, הטעמים והרגעים.</span></div>
+    <div class="type-row"><span class="lbl">Heebo · 500 · tracked</span><span class="body-s">EYEBROW · תווית מקטע</span></div>
+  </div>
+  <div class="note">כותרות: <code>Frank Ruhl Libre</code> (serif, נוכחות ספרותית) · גוף: <code>Heebo</code> (sans, קריא). כיוון <code>RTL</code>.</div>
+</section>
+
+<section class="sect">
+  <div class="sect-h"><h2>רכיבים</h2><span class="en">COMPONENTS</span><span class="ln"></span></div>
+  <div class="grid comp-grid">
+
+    <div class="comp"><div class="tt">תגיות פרקים</div>
+      <div class="stage">
+        <span class="pill c0">היציאה</span><span class="pill c1">סיאול</span><span class="pill c3">בוסאן</span><span class="pill c4">קיוטו</span><span class="pill c6">שיקוקו</span>
+      </div>
+      <div class="note">9 צבעי ענף — אחד לכל פרק (כולל פרק החבורה).</div>
+    </div>
+
+    <div class="comp"><div class="tt">תמונה ממוסגרת</div>
+      <div class="stage">
+        <div class="mount"><img src="web/00105.jpg" alt=""><span class="cap">סיאול · הארמון</span></div>
+      </div>
+      <div class="note">מסגרת לבנה, הטיה קלה וצל — כאילו הודבקה באלבום.</div>
+    </div>
+
+    <div class="comp"><div class="tt">נעיצת מסלול</div>
+      <div class="stage">
+        <div class="route"><span class="seg"></span><div class="pin"><span class="ring"></span><span class="dot">3</span></div><span class="seg"></span><div class="pin"><span class="ring"></span><span class="dot">4</span></div><span class="segd"></span></div>
+      </div>
+      <div class="note">עיגול ממוספר + הילה פועמת · קו מלא = יבשתי · מקווקו = טיסה.</div>
+    </div>
+
+    <div class="comp"><div class="tt">מפת חשיבה</div>
+      <div class="stage" style="flex-direction:column;align-items:flex-start;gap:8px">
+        <span class="rootbox">מסע קוריאה ויפן</span>
+        <span class="pill c1" style="font-size:.85rem">סיאול</span>
+        <span class="leaf"><span class="d"></span> ארמון גיונגבוקגונג</span>
+        <span class="leaf"><span class="d"></span> מגדל N</span>
+      </div>
+      <div class="note">שורש → פרק → ציון דרך (שלוש רמות).</div>
+    </div>
+
+    <div class="comp"><div class="tt">בקרות וכפתורים</div>
+      <div class="stage">
+        <span class="btn-nav">‹</span><span class="btn-nav">›</span>
+        <span class="chip on">סיאול</span><span class="chip">בוסאן</span>
+        <span class="mm-btn">מפת המסע ↗</span>
+      </div>
+      <div class="note">חיצי דפדוף, סרגל פרקים, וכפתור קישור.</div>
+    </div>
+
+    <div class="comp"><div class="tt">קלף ועצי־חיים</div>
+      <div class="stage park" style="padding:0">
+        <div class="scroll-demo" style="width:100%">
+          <div class="valance"></div>
+          <div class="pole r"></div><div class="knob" style="top:4px;right:12px"></div><div class="knob" style="bottom:4px;right:12px"></div>
+          <div class="pole l"></div><div class="knob" style="top:4px;left:12px"></div><div class="knob" style="bottom:4px;left:12px"></div>
+        </div>
+      </div>
+      <div class="note">פרוכת (וילון), גלילי עץ ורימוני זהב — שפת המגילה.</div>
+    </div>
+
+    <div class="comp"><div class="tt">קישוטים ומוטיבים</div>
+      <div class="stage">
+        <span class="crown">✡</span><span class="orn">❧</span><span style="color:var(--accent2);font-size:20px">✈</span><span style="width:64px;height:2px;display:inline-block;background:linear-gradient(90deg,var(--accent),transparent)"></span>
+      </div>
+      <div class="note">כתר, פרח־סיום, סמל טיסה, וקו־הדגשה מתכלה.</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="sect">
+  <div class="sect-h"><h2>עקרונות</h2><span class="en">PRINCIPLES</span><span class="ln"></span></div>
+  <div class="card">
+    <p class="body-m" style="margin:.2rem 0"><b style="color:var(--accent2)">אווירה לפני עומס.</b> תמונות גדולות, הרבה אוויר, וטקסט מדוד — לא "עוד אלבום מתיש".</p>
+    <p class="body-m" style="margin:.6rem 0"><b style="color:var(--accent2)">תנועה עדינה.</b> Ken Burns, מפת מסלול מונפשת, ודפדוף עם קיפול — הנפשה שמשרתת את הסיפור.</p>
+    <p class="body-m" style="margin:.6rem 0"><b style="color:var(--accent2)">RTL אמיתי.</b> עברית מנוקדת בכותרות, זרימה מימין לשמאל, ואיזון ייצוג בין כל חברי החבורה.</p>
+  </div>
+</section>
+
+<div class="foot">· יומן מסע · דרום קוריאה ויפן · 2026 ·<br><a href="index.html">הספר</a> · <a href="scroll.html">המגילה</a></div>
+</div>
+</html>
