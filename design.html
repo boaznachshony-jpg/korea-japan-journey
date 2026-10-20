@@ -62,7 +62,8 @@ code{background:rgba(255,255,255,.07);color:var(--accent2);padding:.08em .4em;bo
 .c0{background:#e8863a}.c1{background:#f2b14e}.c2{background:#d59a63}.c3{background:#c9a24b}.c4{background:#9db86a}.c5{background:#5fb3a2}.c6{background:#6f9bd0}.c7{background:#b081c8}.c8{background:#d1748f}
 
 .mount{background:#fffdf7;padding:8px 8px 26px;border-radius:2px;transform:rotate(-2deg);box-shadow:0 10px 26px rgba(0,0,0,.5);position:relative}
-.mount img{display:block;width:150px;height:110px;object-fit:cover;border-radius:1px}
+.mount img,.mount .ph{display:block;width:150px;height:110px;object-fit:cover;border-radius:1px}
+.mount .ph{background:linear-gradient(135deg,#6f94c0,#9db86a 48%,#e8863a)}
 .mount .cap{position:absolute;inset-inline:8px;bottom:6px;text-align:center;font-family:var(--disp);color:#50391a;font-size:12px}
 
 .pin{position:relative;width:34px;height:34px}
@@ -150,7 +151,7 @@ code{background:rgba(255,255,255,.07);color:var(--accent2);padding:.08em .4em;bo
 
     <div class="comp"><div class="tt">תמונה ממוסגרת</div>
       <div class="stage">
-        <div class="mount"><img src="web/00105.jpg" alt=""><span class="cap">סיאול · הארמון</span></div>
+        <div class="mount"><div class="ph"></div><span class="cap">סיאול · הארמון</span></div>
       </div>
       <div class="note">מסגרת לבנה, הטיה קלה וצל — כאילו הודבקה באלבום.</div>
     </div>
