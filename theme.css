@@ -23,8 +23,9 @@
   /* ---------- גופנים ----------
      לשינוי גופן: בחרו גופן מ-Google Fonts, הוסיפו את שורת ה-<link> שלו
      בראש index.html, ועדכנו כאן. */
-  --disp:"Frank Ruhl Libre",Georgia,"Times New Roman",serif;  /* כותרות */
-  --body:"Heebo","Segoe UI",Arial,sans-serif;                 /* גוף טקסט */
+  --disp:"Amatic SC","Frank Ruhl Libre",cursive;  /* כותרות — כתב יד */
+  --body:"Heebo","Segoe UI",Arial,sans-serif;     /* גוף טקסט — קריא */
+  --hand:"Amatic SC",cursive;                     /* מבטא כתב-יד (כיתובים, ימים) */
 }
 
 /* ============================================================
